@@ -36,7 +36,10 @@ variable "limits" {
   type        = map(string)
   description = "limits for the deployment"
 
-  default = var.requests
+  default = {
+    cpu    = "100m"
+    memory = "128Mi"
+  }
 }
 
 variable "servicemonitor-label" {
