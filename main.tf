@@ -3,7 +3,7 @@ locals {
     "app.kubernetes.io/name"      = var.name
     "app.kubernetes.io/component" = "prometheus-pushgateway"
   }
-  labels = merge(selector_labels, {
+  labels = merge(local.selector_labels, {
     "app.kubernetes.io/managed-by" = "terraform-kubernetes-prometheus-pushgateway"
     "app.kubernetes.io/version"    = var.pushgateway-image-tag
   })
